@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        docker 'gmacario/build-yocto'
+        docker {
+            image 'gmacario/build-yocto'
+        }
     }
 
     stages {
