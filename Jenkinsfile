@@ -12,7 +12,7 @@ pipeline {
         stage('Configure Poky') {
             steps {
                 script {
-                    git clone git://git.yoctoproject.org/poky
+                    git clone "git://git.yoctoproject.org/poky"
                     cd poky
                     git checkout -t origin/styhead -b my-styhead
                 }
