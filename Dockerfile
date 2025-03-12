@@ -15,9 +15,6 @@ RUN apt-get install -y curl dosfstools mtools parted syslinux tree zip
 RUN curl http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
-# Create user "jenkins"
-RUN id jenkins 2>/dev/null || useradd --uid 1000 --create-home jenkins
-
 # Create a non-root user that will perform the actual build
 RUN id build 2>/dev/null || useradd --uid 30000 --create-home build
 RUN apt-get install -y sudo
