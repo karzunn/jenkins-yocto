@@ -6,7 +6,6 @@ pipeline {
             steps {
                 script {
                     sh '''#!/bin/bash
-                        cd poky
                         source oe-init-build-env
                         bitbake core-image-sato
                     '''
