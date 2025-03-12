@@ -5,26 +5,15 @@ pipeline {
         }
     }
     stages {
-        stage('Configure Poky') {
+        stage('Build') {
             steps {
                 script {
                     sh '''
-                        git clone "git://git.yoctoproject.org/poky"
-                        cd poky
-                        git checkout -t origin/styhead -b my-styhead
+                        source oe-init-build-env
+                        bitbake core-image-sato
                     '''
                 }
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         script {
-        //             sh '''
-        //                 source oe-init-build-env
-        //                 bitbake core-image-sato
-        //             '''
-        //         }
-        //     }
-        // }
     }
 }
