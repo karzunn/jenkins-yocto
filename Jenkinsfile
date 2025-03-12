@@ -1,6 +1,9 @@
 pipeline {
-    agent { dockerfile true }
-
+    agent {
+        docker {
+            image 'gmacario/build-yocto'
+        }
+    }
     stages {
         stage('Configure Poky') {
             steps {
