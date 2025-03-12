@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh '''
+                    sh '''#!/bin/bash
                         source oe-init-build-env
                         bitbake core-image-sato
                     '''
