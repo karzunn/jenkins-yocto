@@ -39,6 +39,7 @@ USER build
 WORKDIR /home/build
 
 RUN git clone git://git.yoctoproject.org/poky
+WORKDIR /home/build/poky
 RUN git checkout -t origin/styhead -b my-styhead
 
 CMD "/bin/bash"
