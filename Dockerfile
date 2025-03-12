@@ -6,10 +6,7 @@ RUN apt-get update && apt-get -y upgrade
 
 # Required Packages for the Host Development System
 # http://www.yoctoproject.org/docs/latest/mega-manual/mega-manual.html#required-packages-for-the-host-development-system
-RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
-        build-essential chrpath socat cpio python3 python3-pip python3-pexpect python-is-python3 \
-        xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
-        pylint3 xterm lz4c pzstd unzstd zstd
+RUN apt-get install -y install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 liblz4-tool locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
 
 # Additional host packages required by poky/scripts/wic
 RUN apt-get install -y curl dosfstools mtools parted syslinux tree zip
