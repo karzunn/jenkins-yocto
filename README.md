@@ -11,3 +11,6 @@ The Dockerfile in this repo is mostly sourced from the ```gmacario/build-yocto``
 
 # Jenkinsfile
 The docker image defined by the Dockerfile is used to build a container in which the pipeline will run. Considering Yocto is already configured in the image, all that is left to do is an env setup followed by the build itself. These are handled in the single ```Build``` step. We install and configure as much as possible in the docker image so that we can utilize caching for faster builds.
+
+# Pipeline
+![Pipeline Diagram](diagram.png)
