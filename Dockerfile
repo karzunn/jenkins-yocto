@@ -1,8 +1,11 @@
-FROM debian:latest
+FROM ubuntu:latest
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 liblz4-tool locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
+RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
+        build-essential chrpath socat cpio python3 python3-pip python3-pexpect python-is-python3 \
+        xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
+        pylint3 xterm
 
 # Fix error "Please use a locale setting which supports utf-8."
 RUN apt install -y locales
