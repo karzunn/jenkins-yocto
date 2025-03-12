@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get -y upgrade
 
 # Required Packages for the Host Development System
-# http://www.yoctoproject.org/docs/latest/mega-manual/mega-manual.html#required-packages-for-the-host-development-system
+# https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#build-host-packages
 RUN apt-get install -y build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 liblz4-tool locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
 
 # Additional host packages required by poky/scripts/wic
@@ -37,6 +37,10 @@ ENV LANGUAGE en_US.UTF-8
 
 USER build
 WORKDIR /home/build
+
+RUN git clone git://git.yoctoproject.org/poky
+RUN git checkout -t origin/styhead -b my-styhead
+
 CMD "/bin/bash"
 
 # EOF
